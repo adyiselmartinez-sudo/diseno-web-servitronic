@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios y Soluciones de Ingeniería | Servitronic S.A.S.</title>
+    <!-- Iconos FontAwesome 6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #111827;
+            --bg-card-hover: #172236;
+            --primary-cyan: #00f0ff;
+            --primary-blue: #0072ff;
+            --whatsapp-green: #25d366;
+            --text-white: #ffffff;
+            --text-muted: #9ca3af;
+            --glass-bg: rgba(17, 24, 39, 0.85);
+            --glass-border: rgba(0, 240, 255, 0.16);
+            --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        /* Header & Nav */
+        .header {
+            background-color: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-white);
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--primary-cyan);
+            filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6));
+        }
+
+        .logo-text span {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .logo-text small {
+            font-size: 0.65rem;
+            color: var(--primary-cyan);
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-cyan);
+        }
+
+        .btn {
+            padding: 0.65rem 1.35rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+            font-size: 0.92rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.25);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+            transform: translateY(-2px);
+            color: #000;
+        }
+
+        .btn-primary-sm {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+            color: #000;
+            font-size: 0.82rem;
+            padding: 0.55rem 0.9rem;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: 0.3s;
+        }
+
+        .btn-primary-sm:hover {
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+            transform: translateY(-2px);
+            color: #000;
+        }
+
+        .btn-outline-sm {
+            background: transparent;
+            color: var(--primary-cyan);
+            border: 1px solid var(--glass-border);
+            font-size: 0.82rem;
+            padding: 0.55rem 0.9rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: 0.3s;
+        }
+
+        .btn-outline-sm:hover {
+            border-color: var(--primary-cyan);
+            background: rgba(0, 240, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-cyan);
+            border: 1px solid var(--primary-cyan);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 240, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Banner */
+        .page-banner {
+            padding: 65px 0 35px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 114, 255, 0.18), transparent 70%);
+        }
+
+        .badge-tech {
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--primary-cyan);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--glass-border);
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .page-banner h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--primary-cyan);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.35);
+        }
+
+        .page-banner p {
+            color: var(--text-muted);
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Barra de Métricas y Confianza */
+        .trust-metrics-section {
+            padding: 20px 0 45px;
+        }
+
+        .metrics-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px 25px;
+        }
+
+        .metric-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .metric-item:last-child {
+            border-right: none;
+        }
+
+        .metric-icon {
+            font-size: 1.8rem;
+            color: var(--primary-cyan);
+        }
+
+        .metric-text h4 {
+            font-size: 1.25rem;
+            color: var(--text-white);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .metric-text span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sección de Servicios */
+        .services-section {
+            padding: 20px 0 70px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* Filtros Interactivos de Servicios */
+        .filter-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 35px;
+        }
+
+        .filter-btn {
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(135deg, rgba(0, 114, 255, 0.2), rgba(0, 240, 255, 0.2));
+            color: var(--primary-cyan);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+        }
+
+        /* Grilla de Servicios Mejorada y Compacta */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 420px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.35s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 240, 255, 0.12);
+        }
+
+        /* Wrapper de la Imagen Representativa */
+        .service-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img {
+            transform: scale(1.06);
+        }
+
+        /* Overlay Gradiente sobre la imagen */
+        .service-image-wrapper::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(to top, rgba(17, 24, 39, 0.95), transparent);
+        }
+
+        /* Badges flotantes en la imagen */
+        .badge-floating-left {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 2;
+            background: rgba(11, 15, 25, 0.85);
+            backdrop-filter: blur(6px);
+            color: var(--primary-cyan);
+            border: 1px solid var(--glass-border);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .badge-floating-right {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            z-index: 2;
+            background: rgba(0, 240, 255, 0.15);
+            backdrop-filter: blur(6px);
+            color: var(--primary-cyan);
+            border: 1px solid var(--glass-border);
+            padding: 4px 9px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        /* Contenido de la Tarjeta */
+        .service-content {
+            padding: 22px 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .service-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .service-cat-label {
+            color: var(--primary-cyan);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-sla-tag {
+            color: var(--text-muted);
+            font-size: 0.76rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--text-white);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .service-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.55;
+            margin-bottom: 18px;
+        }
+
+        /* Grilla Compacta de Características Técnicas */
+        .service-features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .feat-pill {
+            background: rgba(0, 240, 255, 0.04);
+            border: 1px solid rgba(0, 240, 255, 0.1);
+            padding: 6px 10px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .feat-pill i {
+            color: var(--primary-cyan);
+            font-size: 0.72rem;
+        }
+
+        /* Acciones Limpias y Profesionales de la Tarjeta */
+        .service-footer-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Sección de Metodología de Implementación */
+        .process-section {
+            padding: 50px 0 70px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .process-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 25px 20px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .process-card:hover {
+            border-color: var(--primary-cyan);
+            transform: translateY(-3px);
+        }
+
+        .step-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: rgba(0, 240, 255, 0.2);
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .process-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary-cyan);
+            margin-bottom: 8px;
+        }
+
+        .process-card p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        /* ========================================================
+           TABLA DE PRECIOS Y PLANES (RESPONSIVE SCROLLABLE)
+           ======================================================== */
+        .pricing-section {
+            padding: 70px 0 90px;
+            background: linear-gradient(180deg, transparent, rgba(17, 24, 39, 0.6) 20%, rgba(17, 24, 39, 0.6) 80%, transparent);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .table-scroll-hint {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--primary-cyan);
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border: 1px dashed var(--glass-border);
+        }
+
+        .table-scroll-hint i {
+            animation: pulse-horizontal 1.5s infinite;
+        }
+
+        @keyframes pulse-horizontal {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(4px); }
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            background: var(--bg-card);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 25px;
+        }
+
+        .table-responsive::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .table-responsive::-webkit-scrollbar-track {
+            background: #0b0f19;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        .table-responsive::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, var(--primary-blue), var(--primary-cyan));
+            border-radius: 6px;
+        }
+
+        .table-responsive::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-cyan);
+        }
+
+        .pricing-table {
+            width: 100%;
+            min-width: 820px;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .pricing-table th, 
+        .pricing-table td {
+            padding: 18px 22px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.92rem;
+            vertical-align: middle;
+        }
+
+        .pricing-table th {
+            background: rgba(11, 15, 25, 0.95);
+            color: var(--text-white);
+            font-weight: 700;
+            border-bottom: 2px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .pricing-table th:first-child {
+            text-align: left;
+            width: 28%;
+        }
+
+        .pricing-table tr:hover td {
+            background: rgba(0, 240, 255, 0.03);
+        }
+
+        .pricing-table td {
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .pricing-table td:first-child {
+            text-align: left;
+            color: var(--text-white);
+            font-weight: 600;
+        }
+
+        .pricing-table .col-featured {
+            background: rgba(0, 240, 255, 0.05);
+            border-left: 2px solid var(--primary-cyan);
+            border-right: 2px solid var(--primary-cyan);
+            position: relative;
+        }
+
+        .pricing-header-cell {
+            padding: 24px 15px;
+        }
+
+        .plan-title {
+            font-size: 1.25rem;
+            color: var(--text-white);
+            margin-bottom: 5px;
+        }
+
+        .plan-units {
+            font-size: 0.78rem;
+            color: var(--primary-cyan);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .plan-cost {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text-white);
+            margin: 8px 0;
+        }
+
+        .plan-cost span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .popular-badge {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+            color: #000;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .check-yes {
+            color: var(--primary-cyan);
+            font-size: 1.15rem;
+        }
+
+        .check-no {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 1rem;
+        }
+
+        .table-note {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* CTA Box */
+        .cta-section {
+            padding: 60px 0 80px;
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, rgba(0, 114, 255, 0.15), rgba(0, 240, 255, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .cta-card h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .cta-card p {
+            color: var(--text-muted);
+            max-width: 680px;
+            margin: 0 auto 30px;
+            font-size: 1.05rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-card);
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer-brand small {
+            color: var(--primary-cyan);
+            display: block;
+            margin-top: 10px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            line-height: 2;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .footer-contact p {
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact i {
+            color: var(--primary-cyan);
+            margin-right: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        /* Botón Flotante de WhatsApp (Único canal WhatsApp en la vista) */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #128c7e, #25d366);
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+            z-index: 9999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+            color: #ffffff;
+        }
+
+        .floating-whatsapp::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #25d366;
+            opacity: 0.7;
+            z-index: -1;
+            animation: whatsapp-pulse 2s infinite;
+        }
+
+        @keyframes whatsapp-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.55);
+                opacity: 0;
+            }
+        }
+
+        /* Responsividad Móvil */
+        @media (max-width: 900px) {
+            .metrics-strip {
+                grid-template-columns: 1fr 1fr;
+            }
+            .metric-item:nth-child(2) {
+                border-right: none;
+            }
+        }
+
+        
+
+            .page-banner h1 {
+                font-size: 2.1rem;
+            }
+
+            .table-scroll-hint {
+                display: flex;
+            }
+
+            .metrics-strip {
+                grid-template-columns: 1fr;
+            }
+
+            .metric-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            }
+
+            .metric-item:last-child {
+                border-bottom: none;
+            }
+        }
+    
+        /* Menú desplegable para tablet y móvil */
+        .menu-toggle { display: none; }
+        .mobile-quote { display: none; }
+        @media (max-width: 900px) {
+            .nav-container { position: relative; }
+            .nav-container > .btn { display: none; }
+            .menu-toggle {
+                display: flex; flex-direction: column; justify-content: center; gap: 5px;
+                width: 46px; height: 46px; padding: 10px; border-radius: 10px;
+                border: 1px solid var(--glass-border); background: rgba(0, 240, 255, 0.08);
+                color: var(--primary-cyan); cursor: pointer; transition: 0.25s ease;
+            }
+            .menu-toggle:hover, .menu-toggle:focus-visible {
+                border-color: var(--primary-cyan); box-shadow: 0 0 14px rgba(0, 240, 255, 0.2);
+                outline: none;
+            }
+            .menu-toggle span {
+                display: block; width: 24px; height: 2px; border-radius: 2px;
+                background: currentColor; transition: transform 0.25s ease, opacity 0.2s ease;
+            }
+            .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+            .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+            .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
+            .navbar {
+                position: absolute; top: calc(100% + 1rem); left: 0; right: 0; z-index: 1001;
+                display: block; padding: 0 1rem; max-height: 0; overflow: hidden;
+                opacity: 0; visibility: hidden; pointer-events: none;
+                background: rgba(11, 15, 25, 0.98); backdrop-filter: blur(14px);
+                border: 1px solid transparent; border-radius: 14px;
+                box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38);
+                transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease, border-color 0.2s ease;
+            }
+            .navbar.is-open {
+                max-height: 420px; padding: 0.65rem 1rem; opacity: 1; visibility: visible;
+                pointer-events: auto; border-color: var(--glass-border);
+            }
+            .nav-links { display: flex; flex-direction: column; gap: 0; }
+            .nav-links li { border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+            .nav-links li:last-child { border-bottom: 0; }
+            .nav-links a { display: block; padding: 0.9rem 0.25rem; font-size: 1rem; }
+            .nav-links a.active::after { bottom: 0.45rem; width: 32px; }
+            .mobile-quote { display: block; }
+            .mobile-quote a { color: var(--primary-cyan); font-weight: 700; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .menu-toggle span, .navbar { transition: none; }
+        }
+    </style>
+</head>
+<body>
+
+        <!-- Header & Navegación -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt logo-icon"></i>
+                <div class="logo-text">
+                    <span>SERVITRONIC</span>
+                    <small>INGENIERIA S.A.S.</small>
+                </div>
+            </a>            <nav class="navbar" id="site-navigation" aria-label="Navegación principal">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html" class="active" aria-current="page">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li class="mobile-quote"><a href="contacto.html#contactForm"><i class="fa-solid fa-calculator" aria-hidden="true"></i> Cotizar proyecto</a></li>
+                </ul>
+            </nav>
+
+<button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="site-navigation">
+                <span></span><span></span><span></span>
+            </button>
+
+            <a href="contacto.html" class="btn btn-primary" style="width: auto;">
+                <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Banner de la Página -->
+        <section class="page-banner">
+            <div class="container">
+                <span class="badge-tech"><i class="fa-solid fa-microchip"></i> Portafolio de Ingeniería de Alta Gama</span>
+                <h1>Ecosistema de Soluciones <br><span class="highlight">para la Propiedad Horizontal</span></h1>
+                <p>Integración de CCTV con analítica de IA, citofonía virtual, control biométrico, asambleas digitales y certificación RETIE con respaldo legal y atención 24/7 en Bogotá.</p>
+            </div>
+        </section>
+
+        <!-- Barra de Métricas y Respaldo Institucional -->
+        <section class="trust-metrics-section">
+            <div class="container">
+                <div class="metrics-strip">
+                    <div class="metric-item">
+                        <i class="fa-solid fa-shield-halved metric-icon"></i>
+                        <div class="metric-text">
+                            <h4>SuperVigilancia</h4>
+                            <span>Res. 20204000064817</span>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <i class="fa-solid fa-clock-rotate-left metric-icon"></i>
+                        <div class="metric-text">
+                            <h4>20+ Años</h4>
+                            <span>Experiencia en P.H.</span>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <i class="fa-solid fa-server metric-icon"></i>
+                        <div class="metric-text">
+                            <h4>99.8% SLA</h4>
+                            <span>Disponibilidad Red</span>
+                        </div>
+                    </div>
+                    <div class="metric-item">
+                        <i class="fa-solid fa-mobile-screen metric-icon"></i>
+                        <div class="metric-text">
+                            <h4>+57 318 220 5012</h4>
+                            <span>Línea Celular Móvil</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portafolio de Servicios con Imágenes Representativas -->
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Servicios Especializados para Copropiedades</h2>
+                    <p>Infraestructura tecnológica compacta, moderna y eficiente diseñada para administradores, comités de seguridad y residentes en Bogotá.</p>
+                </div>
+
+                <!-- Filtros Interactivos por Categoría -->
+                <div class="filter-controls">
+                    <button class="filter-btn active" onclick="filtrarServicios('todos', this)">Todos los Servicios</button>
+                    <button class="filter-btn" onclick="filtrarServicios('seguridad', this)">Seguridad Electrónica</button>
+                    <button class="filter-btn" onclick="filtrarServicios('comunicacion', this)">Comunicaciones PropTech</button>
+                    <button class="filter-btn" onclick="filtrarServicios('infraestructura', this)">Infraestructura & Redes</button>
+                </div>
+
+                <div class="services-grid" id="servicesGrid">
+                    
+                    <!-- Servicio 1: CCTV con IA -->
+                    <div class="service-card" data-cat="seguridad">
+                        <div class="service-image-wrapper">
+                            <img src="img/cctv-ia.jpg" alt="CCTV y Analítica con IA Servitronic" class="service-img" loading="lazy">
+                            <span class="badge-floating-left"><i class="fa-solid fa-microchip"></i> IA Integrada</span>
+                            <span class="badge-floating-right">HIKVISION / DAHUA</span>
+                        </div>
+                        <div class="service-content">
+                            <div>
+                                <div class="service-meta">
+                                    <span class="service-cat-label">Seguridad Electrónica</span>
+                                    <span class="service-sla-tag"><i class="fa-solid fa-clock"></i> Respuesta &lt; 2h</span>
+                                </div>
+                                <h3>CCTV y Analítica de Video con IA</h3>
+                                <p class="service-description">
+                                    Cámaras IP 4K de alta definición con algoritmos de Inteligencia Artificial para detección perimetral, cruce de línea, reconocimiento facial y almacenamiento híbrido.
+                                </p>
+                                <div class="service-features-grid">
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Cámaras IP 4K térmicas</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Grabación en nube híbrida</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Analítica de merodeo IA</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Cumplimiento Habeas Data</div>
+                                </div>
+                            </div>
+                            <div class="service-footer-actions">
+                                <a href="contacto.html" class="btn btn-primary-sm">
+                                    <i class="fa-solid fa-calculator"></i> Cotizar Servicio
+                                </a>
+                                <a href="#planes" class="btn btn-outline-sm">
+                                    <i class="fa-solid fa-table-list"></i> Ver Tarifas
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 2: Citofonía Virtual Citoplus -->
+                    <div class="service-card" data-cat="comunicacion">
+                        <div class="service-image-wrapper">
+                            <img src="img/citofonia-virtual.jpg" alt="Citofonía Virtual Citoplus" class="service-img" loading="lazy">
+                            <span class="badge-floating-left"><i class="fa-solid fa-cloud"></i> Cero Cableado</span>
+                            <span class="badge-floating-right">CITOPLUS OFICIAL</span>
+                        </div>
+                        <div class="service-content">
+                            <div>
+                                <div class="service-meta">
+                                    <span class="service-cat-label">Comunicaciones PropTech</span>
+                                    <span class="service-sla-tag"><i class="fa-solid fa-mobile-screen"></i> App Móvil</span>
+                                </div>
+                                <h3>Citofonía Virtual en la Nube (Citoplus)</h3>
+                                <p class="service-description">
+                                    Comunicación digital directa desde portería a smartphones y celulares de los residentes sin necesidad de cableado físico ni canaletas en fachadas.
+                                </p>
+                                <div class="service-features-grid">
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Sin ductos ni cableados</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Control de encomiendas</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Autorizaciones por App</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Historial y auditoría</div>
+                                </div>
+                            </div>
+                            <div class="service-footer-actions">
+                                <a href="contacto.html" class="btn btn-primary-sm">
+                                    <i class="fa-solid fa-calculator"></i> Cotizar Servicio
+                                </a>
+                                <a href="#planes" class="btn btn-outline-sm">
+                                    <i class="fa-solid fa-table-list"></i> Ver Tarifas
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 3: Control de Acceso Biométrico y Vehicular -->
+                    <div class="service-card" data-cat="seguridad">
+                        <div class="service-image-wrapper">
+                            <img src="img/control-acceso.jpg" alt="Control de Acceso Biométrico y Vehicular" class="service-img" loading="lazy">
+                            <span class="badge-floating-left"><i class="fa-solid fa-fingerprint"></i> Biometría Facial</span>
+                            <span class="badge-floating-right">ZKTECO / LPR</span>
+                        </div>
+                        <div class="service-content">
+                            <div>
+                                <div class="service-meta">
+                                    <span class="service-cat-label">Seguridad Electrónica</span>
+                                    <span class="service-sla-tag"><i class="fa-solid fa-car"></i> Acceso Vehicular</span>
+                                </div>
+                                <h3>Control Biométrico y Vehicular (LPR)</h3>
+                                <p class="service-description">
+                                    Gestión perimetral de accesos peatonales con lectores faciales ZKTeco y talanqueras vehiculares automatizadas con lectura de placas y antenas TAG de largo alcance.
+                                </p>
+                                <div class="service-features-grid">
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Reconocimiento facial 3D</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Lectura de placas LPR</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Talanqueras alto flujo</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Software administrativo</div>
+                                </div>
+                            </div>
+                            <div class="service-footer-actions">
+                                <a href="contacto.html" class="btn btn-primary-sm">
+                                    <i class="fa-solid fa-calculator"></i> Cotizar Servicio
+                                </a>
+                                <a href="#planes" class="btn btn-outline-sm">
+                                    <i class="fa-solid fa-table-list"></i> Ver Tarifas
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 4: Asambleas Digitales GOPH -->
+                    <div class="service-card" data-cat="comunicacion">
+                        <div class="service-image-wrapper">
+                            <img src="img/asambleas-goph.jpg" alt="Logística de Asambleas Digitales GOPH" class="service-img" loading="lazy">
+                            <span class="badge-floating-left"><i class="fa-solid fa-users-gear"></i> Validez Jurídica</span>
+                            <span class="badge-floating-right">PLATAFORMA GOPH</span>
+                        </div>
+                        <div class="service-content">
+                            <div>
+                                <div class="service-meta">
+                                    <span class="service-cat-label">Comunicaciones PropTech</span>
+                                    <span class="service-sla-tag"><i class="fa-solid fa-check-double"></i> Quórum Real</span>
+                                </div>
+                                <h3>Logística y Asambleas Digitales (GOPH)</h3>
+                                <p class="service-description">
+                                    Organización técnica y plataforma digital certificada para asambleas de copropietarios virtuales, presenciales y mixtas con votación en tiempo real.
+                                </p>
+                                <div class="service-features-grid">
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Votación electrónica segura</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Cálculo de coeficientes</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Moderación técnica en vivo</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Informes de votación en PDF</div>
+                                </div>
+                            </div>
+                            <div class="service-footer-actions">
+                                <a href="contacto.html" class="btn btn-primary-sm">
+                                    <i class="fa-solid fa-calculator"></i> Cotizar Servicio
+                                </a>
+                                <a href="#planes" class="btn btn-outline-sm">
+                                    <i class="fa-solid fa-table-list"></i> Ver Tarifas
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 5: Redes, Fibra Óptica y RETIE -->
+                    <div class="service-card" data-cat="infraestructura">
+                        <div class="service-image-wrapper">
+                            <img src="img/redes-retie.jpg" alt="Redes, Fibra Óptica y Certificación RETIE" class="service-img" loading="lazy">
+                            <span class="badge-floating-left"><i class="fa-solid fa-network-wired"></i> Certificación RETIE</span>
+                            <span class="badge-floating-right">FIBRA & UPS</span>
+                        </div>
+                        <div class="service-content">
+                            <div>
+                                <div class="service-meta">
+                                    <span class="service-cat-label">Infraestructura & Redes</span>
+                                    <span class="service-sla-tag"><i class="fa-solid fa-bolt"></i> Grado Industrial</span>
+                                </div>
+                                <h3>Cableado Estructurado y Fibra Óptica</h3>
+                                <p class="service-description">
+                                    Diseño e implementación de centros de cableado, enlaces de fibra óptica monomodo, bancos de UPS y adecuación bajo normativa técnica RETIE y de telecomunicaciones.
+                                </p>
+                                <div class="service-features-grid">
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Cableado Cat 6A / Fibra</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Certificación de puntos</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Protección sobretensión</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Respaldo eléctrico UPS</div>
+                                </div>
+                            </div>
+                            <div class="service-footer-actions">
+                                <a href="contacto.html" class="btn btn-primary-sm">
+                                    <i class="fa-solid fa-calculator"></i> Cotizar Servicio
+                                </a>
+                                <a href="#planes" class="btn btn-outline-sm">
+                                    <i class="fa-solid fa-table-list"></i> Ver Tarifas
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 6: Mantenimiento y Soporte B2B 24/7 -->
+                    <div class="service-card" data-cat="infraestructura">
+                        <div class="service-image-wrapper">
+                            <img src="img/soporte-tecnico.jpg" alt="Mantenimiento y Soporte B2B Servitronic" class="service-img" loading="lazy">
+                            <span class="badge-floating-left"><i class="fa-solid fa-headset"></i> Urgencias 24/7</span>
+                            <span class="badge-floating-right">EQUIPOS COMODATO</span>
+                        </div>
+                        <div class="service-content">
+                            <div>
+                                <div class="service-meta">
+                                    <span class="service-cat-label">Soporte Técnico B2B</span>
+                                    <span class="service-sla-tag"><i class="fa-solid fa-wrench"></i> Cuadrilla Móvil</span>
+                                </div>
+                                <h3>Mantenimiento y Mesa de Ayuda 24/7</h3>
+                                <p class="service-description">
+                                    Planes de póliza preventiva y correctiva con tiempos de respuesta contractuales, técnicos en sitio y préstamo de equipos en comodato mientras se repara el original.
+                                </p>
+                                <div class="service-features-grid">
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Respuesta garantizada</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Equipos de sustitución</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Informes mensuales a P.H.</div>
+                                    <div class="feat-pill"><i class="fa-solid fa-check"></i> Repuestos originales</div>
+                                </div>
+                            </div>
+                            <div class="service-footer-actions">
+                                <a href="contacto.html" class="btn btn-primary-sm">
+                                    <i class="fa-solid fa-calculator"></i> Cotizar Servicio
+                                </a>
+                                <a href="#planes" class="btn btn-outline-sm">
+                                    <i class="fa-solid fa-table-list"></i> Ver Tarifas
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodología de Implementación (4 Pasos de Ingeniería) -->
+        <section class="process-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-tech"><i class="fa-solid fa-diagram-project"></i> Rigurosidad Técnica</span>
+                    <h2>Metodología de Trabajo de Servitronic</h2>
+                    <p>Un proceso paso a paso transparente que asegura el éxito operativo de cada copropiedad.</p>
+                </div>
+
+                <div class="process-grid">
+                    <div class="process-card">
+                        <span class="step-number">01</span>
+                        <h4>1. Diagnóstico Sin Costo</h4>
+                        <p>Visita pericial de nuestros ingenieros a la copropiedad para auditar el estado del cableado, puntos ciegos de cámaras y requerimientos de la administración.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="step-number">02</span>
+                        <h4>2. Propuesta a la Medida</h4>
+                        <p>Entrega de memoria técnica con plano perimetral, especificaciones de hardware homologado y cuadro comparativo de inversión ajustado al presupuesto.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="step-number">03</span>
+                        <h4>3. Montaje Certificado</h4>
+                        <p>Instalación limpia por técnicos uniformados y certificados bajo normas RETIE, sin cables expuestos y con pruebas de rendimiento en tiempo real.</p>
+                    </div>
+
+                    <div class="process-card">
+                        <span class="step-number">04</span>
+                        <h4>4. Soporte Continuo 24/7</h4>
+                        <p>Capacitación al equipo de seguridad de portería, entrega de garantías escritas y activación de la línea prioritaria de emergencias por celular y WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN TABLA DE PRECIOS Y PLANES (SCROLLABLE EN CELULARES) -->
+        <section id="planes" class="pricing-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="badge-tech"><i class="fa-solid fa-table-list"></i> Tarifas Transparentes</span>
+                    <h2>Tabla de Precios y Planes para Copropiedades</h2>
+                    <p>Compara nuestras modalidades de servicio según el tamaño de tu conjunto residencial o edificio corporativo.</p>
+                </div>
+
+                <!-- Indicador de desplazamiento para pantallas táctiles y celulares -->
+                <div class="table-scroll-hint">
+                    <i class="fa-solid fa-arrows-left-right"></i>
+                    <span>Desliza la tabla horizontalmente para ver todos los planes</span>
+                </div>
+
+                <!-- Contenedor responsive con overflow-x auto -->
+                <div class="table-responsive">
+                    <table class="pricing-table">
+                        <thead>
+                            <tr>
+                                <th>Características del Servicio</th>
+                                <th>
+                                    <div class="pricing-header-cell">
+                                        <div class="plan-title">Plan Pyme</div>
+                                        <div class="plan-units">1 - 50 Viviendas</div>
+                                        <div class="plan-cost">$350.000 <span>/mes</span></div>
+                                        <a href="contacto.html" class="btn btn-outline btn-sm">Elegir Plan</a>
+                                    </div>
+                                </th>
+                                <th class="col-featured">
+                                    <div class="pricing-header-cell">
+                                        <span class="popular-badge"><i class="fa-solid fa-star"></i> Más Popular</span>
+                                        <div class="plan-title">Plan Estándar</div>
+                                        <div class="plan-units">51 - 100 Viviendas</div>
+                                        <div class="plan-cost">$620.000 <span>/mes</span></div>
+                                        <a href="contacto.html" class="btn btn-primary btn-sm">Elegir Plan</a>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="pricing-header-cell">
+                                        <div class="plan-title">Plan Avanzado</div>
+                                        <div class="plan-units">101 - 200 Viviendas</div>
+                                        <div class="plan-cost">$980.000 <span>/mes</span></div>
+                                        <a href="contacto.html" class="btn btn-outline btn-sm">Elegir Plan</a>
+                                    </div>
+                                </th>
+                                <th>
+                                    <div class="pricing-header-cell">
+                                        <div class="plan-title">Plan Enterprise</div>
+                                        <div class="plan-units">201 - 500+ Viviendas</div>
+                                        <div class="plan-cost">$1.450.000 <span>/mes</span></div>
+                                        <a href="contacto.html" class="btn btn-outline btn-sm">Elegir Plan</a>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Citofonía Virtual Citoplus (App Móvil)</td>
+                                <td><i class="fa-solid fa-check check-yes"></i> Hasta 50 licencias</td>
+                                <td class="col-featured"><i class="fa-solid fa-check check-yes"></i> Hasta 100 licencias</td>
+                                <td><i class="fa-solid fa-check check-yes"></i> Hasta 200 licencias</td>
+                                <td><i class="fa-solid fa-check check-yes"></i> Licencias Ilimitadas</td>
+                            </tr>
+                            <tr>
+                                <td>Mantenimiento de CCTV (Cámaras IP)</td>
+                                <td>Hasta 16 Cámaras</td>
+                                <td class="col-featured">Hasta 32 Cámaras</td>
+                                <td>Hasta 64 Cámaras</td>
+                                <td>Cámaras Ilimitadas</td>
+                            </tr>
+                            <tr>
+                                <td>Analítica de Video con Inteligencia Artificial</td>
+                                <td><i class="fa-solid fa-xmark check-no"></i> No incluye</td>
+                                <td class="col-featured"><i class="fa-solid fa-check check-yes"></i> Detección Perimetral</td>
+                                <td><i class="fa-solid fa-check check-yes"></i> Cruce de Línea + IA</td>
+                                <td><i class="fa-solid fa-check check-yes"></i> Reconocimiento Facial IA</td>
+                            </tr>
+                            <tr>
+                                <td>Control de Acceso Biométrico Peatonal</td>
+                                <td>1 Punto (Portería)</td>
+                                <td class="col-featured">2 Puntos de Acceso</td>
+                                <td>4 Puntos de Acceso</td>
+                                <td>Puntos Ilimitados</td>
+                            </tr>
+                            <tr>
+                                <td>Control de Acceso Vehicular (TAG / LPR)</td>
+                                <td>Opcional</td>
+                                <td class="col-featured"><i class="fa-solid fa-check check-yes"></i> 1 Talanquera TAG</td>
+                                <td><i class="fa-solid fa-check check-yes"></i> 2 Talanqueras TAG + LPR</td>
+                                <td><i class="fa-solid fa-check check-yes"></i> Multi-acceso con LPR 4K</td>
+                            </tr>
+                            <tr>
+                                <td>Plataforma para Asambleas (GOPH)</td>
+                                <td>Tarifa preferencial</td>
+                                <td class="col-featured">1 Asamblea Anual Incluida</td>
+                                <td>2 Asambleas Anuales Incluidas</td>
+                                <td>Asambleas Ilimitadas</td>
+                            </tr>
+                            <tr>
+                                <td>Visitas Técnicas Preventivas</td>
+                                <td>1 Mensual</td>
+                                <td class="col-featured">2 Mensuales</td>
+                                <td>Semanal (4 al mes)</td>
+                                <td>Técnico Dedicado / 24/7</td>
+                            </tr>
+                            <tr>
+                                <td>Tiempo Máximo de Respuesta a Emergencias</td>
+                                <td>Menos de 6 Horas</td>
+                                <td class="col-featured">Menos de 4 Horas</td>
+                                <td>Menos de 2 Horas</td>
+                                <td>Atención Inmediata &lt; 1 Hora</td>
+                            </tr>
+                            <tr>
+                                <td>Auditoría Legal SuperVigilancia & RETIE</td>
+                                <td>Anual</td>
+                                <td class="col-featured">Semestral</td>
+                                <td>Trimestral</td>
+                                <td>Permanente Continuo</td>
+                            </tr>
+                            <tr>
+                                <td>Equipos de Respaldo en Calidad de Préstamo</td>
+                                <td><i class="fa-solid fa-xmark check-no"></i> No incluye</td>
+                                <td class="col-featured"><i class="fa-solid fa-check check-yes"></i> Cámaras y Fuentes</td>
+                                <td><i class="fa-solid fa-check check-yes"></i> Cámaras, DVR/NVR y Fuentes</td>
+                                <td><i class="fa-solid fa-check check-yes"></i> Sustitución Inmediata Total</td>
+                            </tr>
+                            <tr>
+                                <td>Acción Recomendada</td>
+                                <td><a href="contacto.html" class="btn btn-outline btn-sm">Cotizar Pyme</a></td>
+                                <td class="col-featured"><a href="contacto.html" class="btn btn-primary btn-sm">Cotizar Estándar</a></td>
+                                <td><a href="contacto.html" class="btn btn-outline btn-sm">Cotizar Avanzado</a></td>
+                                <td><a href="contacto.html" class="btn btn-outline btn-sm">Cotizar Enterprise</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="table-note">
+                    <i class="fa-solid fa-circle-info"></i> Precios base en pesos colombianos (COP). La cotización final se adapta al diagnóstico técnico y estado de la infraestructura de su copropiedad.
+                </p>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2>¿Necesitas un Plan a la Medida de tu Copropiedad?</h2>
+                    <p>Nuestros ingenieros certificados realizan una visita técnica de inspección sin costo para diagnosticar el estado de tus sistemas y entregarte una propuesta técnica y económica personalizada.</p>
+                    <div class="cta-buttons">
+                        <a href="contacto.html" class="btn btn-primary">
+                            <i class="fa-solid fa-calendar-check"></i> Agendar Diagnóstico Gratuito
+                        </a>
+                        <a href="contacto.html" class="btn btn-outline">
+                            <i class="fa-solid fa-envelope"></i> Contactar un Asesor
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Corporativo -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-bolt logo-icon"></i>
+                    <span>SERVITRONIC S.A.S.</span>
+                </div>
+                <p>Ingeniería Eléctrica y Electrónica aplicada a la seguridad de la propiedad horizontal en Bogotá.</p>
+                <small>Licencia SuperVigilancia Res. No. 20204000064817</small>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto Directo</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Barrio Diana Turbay, Bogotá D.C.</p>
+                <p><i class="fa-solid fa-envelope"></i> servitronic_ing_sas@hotmail.com</p>
+                <p><i class="fa-solid fa-mobile-screen"></i> <a href="tel:+573182205012" style="color: inherit; text-decoration: none;">+57 318 220 5012 (Celular)</a></p>
+                <p><i class="fa-brands fa-whatsapp" style="color: var(--whatsapp-green);"></i> <a href="https://wa.me/573182205012" target="_blank" style="color: inherit; text-decoration: none;">+57 318 220 5012 (WhatsApp)</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Servitronic Ingeniería Eléctrica y Electrónica S.A.S. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp (Único canal WhatsApp en esta vista) -->
+    <a href="https://wa.me/573182205012?text=Hola%20Servitronic%20S.A.S.,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20para%20mi%20copropiedad." 
+       class="floating-whatsapp" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       title="Chatea con nosotros por WhatsApp (+57 318 220 5012)" 
+       aria-label="Contacto por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Script de Filtro Interactivo por Categoría -->
+    <script>
+        function filtrarServicios(categoria, btnElement) {
+            // Actualizar botones de filtro
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            // Filtrar tarjetas
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-cat');
+                if (categoria === 'todos' || cardCat === categoria) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+
+    <script>
+        (() => {
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('#site-navigation');
+            if (!toggle || !menu) return;
+            const closeMenu = () => {
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Abrir menú de navegación');
+                menu.classList.remove('is-open');
+            };
+            toggle.addEventListener('click', () => {
+                const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', String(!isOpen));
+                toggle.setAttribute('aria-label', isOpen ? 'Abrir menú de navegación' : 'Cerrar menú de navegación');
+                menu.classList.toggle('is-open', !isOpen);
+            });
+            menu.addEventListener('click', event => {
+                if (event.target.closest('a')) closeMenu();
+            });
+            document.addEventListener('click', event => {
+                if (!menu.contains(event.target) && !toggle.contains(event.target)) closeMenu();
+            });
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape') { closeMenu(); toggle.focus(); }
+            });
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) closeMenu();
+            });
+        })();
+    </script>
+</body>
+</html>

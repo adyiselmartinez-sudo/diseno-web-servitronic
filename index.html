@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servitronic S.A.S. | Innovación y Seguridad a tu Alcance</title>
+    <!-- FontAwesome 6.4.0 Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ==========================================
+           VARIABLES Y CONFIGURACIÓN GLOBAL
+           ========================================== */
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #111827;
+            --bg-card-hover: #1f293d;
+            --primary-cyan: #00f0ff;
+            --primary-blue: #0072ff;
+            --text-white: #ffffff;
+            --text-muted: #9ca3af;
+            --glass-bg: rgba(17, 24, 39, 0.75);
+            --glass-border: rgba(0, 240, 255, 0.18);
+            --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================
+           HEADER & NAVEGACIÓN
+           ========================================== */
+        .header {
+            background-color: rgba(11, 15, 25, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-white);
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--primary-cyan);
+            filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6));
+        }
+
+        .logo-text span {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+            display: block;
+            line-height: 1.1;
+        }
+
+        .logo-text small {
+            font-size: 0.65rem;
+            color: var(--primary-cyan);
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color var(--transition-speed);
+            position: relative;
+        }
+
+        .nav-links a:hover, 
+        .nav-links a.active {
+            color: var(--primary-cyan);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-cyan);
+            box-shadow: 0 0 8px var(--primary-cyan);
+            border-radius: 2px;
+        }
+
+        /* ==========================================
+           BOTONES
+           ========================================== */
+        .btn {
+            padding: 0.65rem 1.4rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all var(--transition-speed);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+            color: #0b0f19;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.25);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+            transform: translateY(-2px);
+            color: #000;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-cyan);
+            color: var(--primary-cyan);
+            background: rgba(0, 240, 255, 0.03);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0, 240, 255, 0.15);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-lg {
+            padding: 0.85rem 1.8rem;
+            font-size: 1rem;
+        }
+
+        .btn-block {
+            width: 100%;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        /* ==========================================
+           SECCIÓN HERO
+           ========================================== */
+        .hero {
+            padding: 90px 0 70px;
+            position: relative;
+            background: radial-gradient(circle at 85% 20%, rgba(0, 114, 255, 0.18) 0%, transparent 45%),
+                        radial-gradient(circle at 15% 80%, rgba(0, 240, 255, 0.1) 0%, transparent 40%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .badge-tech {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 240, 255, 0.08);
+            color: var(--primary-cyan);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--glass-border);
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .highlight {
+            color: var(--primary-cyan);
+            text-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 20px;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-item i {
+            color: var(--primary-cyan);
+        }
+
+        /* ==========================================
+           GLASSMORPHISM CARDS & STATS
+           ========================================== */
+        .glassmorphism {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            color: var(--primary-cyan);
+        }
+
+        .card-header i {
+            font-size: 1.4rem;
+        }
+
+        .card-header h3 {
+            color: var(--text-white);
+            font-size: 1.25rem;
+        }
+
+        .stat-box {
+            margin: 15px 0;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary-cyan);
+            line-height: 1;
+            margin-bottom: 5px;
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        .stat-box p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--glass-border);
+            margin: 20px 0;
+        }
+
+        .card-footer-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: var(--primary-cyan);
+            background: rgba(0, 240, 255, 0.05);
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px dashed var(--glass-border);
+        }
+
+        /* ==========================================
+           ALIADOS Y MARCAS
+           ========================================== */
+        .partners {
+            padding: 35px 0;
+            background: var(--bg-card);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .partners-title {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            margin-bottom: 22px;
+            font-weight: 700;
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .partner-item {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #d1d5db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color var(--transition-speed);
+        }
+
+        .partner-item i {
+            color: var(--primary-cyan);
+        }
+
+        .partner-item:hover {
+            color: var(--primary-cyan);
+        }
+
+        /* ==========================================
+           SERVICIOS DESTACADOS
+           ========================================== */
+        .services-overview {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-header h2 {
+            font-size: 2.3rem;
+            color: var(--text-white);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all var(--transition-speed);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-cyan);
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.12);
+            background: var(--bg-card-hover);
+        }
+
+        .service-icon {
+            font-size: 2.2rem;
+            color: var(--primary-cyan);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 22px;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap var(--transition-speed);
+        }
+
+        .service-card:hover .service-link {
+            gap: 10px;
+        }
+
+        /* ==========================================
+           SIMULADOR B2B
+           ========================================== */
+        .simulator-section {
+            padding: 40px 0 90px;
+        }
+
+        .simulator-card {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .simulator-text {
+            margin-bottom: 25px;
+        }
+
+        .simulator-text h2 {
+            font-size: 1.8rem;
+            color: var(--text-white);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .simulator-text h2 i {
+            color: var(--primary-cyan);
+        }
+
+        .simulator-controls label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-white);
+            font-size: 0.95rem;
+        }
+
+        .simulator-controls select {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            border: 1px solid var(--glass-border);
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+            margin-bottom: 25px;
+            transition: border-color var(--transition-speed);
+        }
+
+        .simulator-controls select:focus {
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        .simulator-result {
+            background: rgba(0, 240, 255, 0.04);
+            padding: 24px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-cyan);
+        }
+
+        .plan-name {
+            font-weight: 700;
+            color: var(--primary-cyan);
+            font-size: 1.15rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .simulator-result p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        /* ==========================================
+           FOOTER CORPORATIVO
+           ========================================== */
+        .footer {
+            background: var(--bg-card);
+            padding: 70px 0 25px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin: 15px 0;
+            max-width: 380px;
+        }
+
+        .footer-brand small {
+            color: var(--primary-cyan);
+            display: inline-block;
+            font-size: 0.8rem;
+            background: rgba(0, 240, 255, 0.06);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 240, 255, 0.15);
+        }
+
+        .footer-links h4, 
+        .footer-contact h4 {
+            color: var(--text-white);
+            margin-bottom: 18px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            line-height: 2.2;
+            font-size: 0.95rem;
+            transition: color var(--transition-speed);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .footer-contact p {
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contact i {
+            color: var(--primary-cyan);
+            width: 16px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 25px;
+        }
+
+        /* ==========================================
+           RESPONSIVE DESIGN (MEDIA QUERIES)
+           ========================================== */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        
+
+            .hero {
+                padding: 50px 0;
+            }
+
+            .hero-text h1 {
+                font-size: 2.1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    
+        /* Botón Flotante de WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #128c7e, #25d366);
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+            z-index: 9999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+            color: #ffffff;
+        }
+
+        .floating-whatsapp::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #25d366;
+            opacity: 0.7;
+            z-index: -1;
+            animation: whatsapp-pulse 2s infinite;
+        }
+
+        @keyframes whatsapp-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.55);
+                opacity: 0;
+            }
+        }
+    
+        /* Menú desplegable para tablet y móvil */
+        .menu-toggle { display: none; }
+        .mobile-quote { display: none; }
+        @media (max-width: 900px) {
+            .nav-container { position: relative; }
+            .nav-container > .btn { display: none; }
+            .menu-toggle {
+                display: flex; flex-direction: column; justify-content: center; gap: 5px;
+                width: 46px; height: 46px; padding: 10px; border-radius: 10px;
+                border: 1px solid var(--glass-border); background: rgba(0, 240, 255, 0.08);
+                color: var(--primary-cyan); cursor: pointer; transition: 0.25s ease;
+            }
+            .menu-toggle:hover, .menu-toggle:focus-visible {
+                border-color: var(--primary-cyan); box-shadow: 0 0 14px rgba(0, 240, 255, 0.2);
+                outline: none;
+            }
+            .menu-toggle span {
+                display: block; width: 24px; height: 2px; border-radius: 2px;
+                background: currentColor; transition: transform 0.25s ease, opacity 0.2s ease;
+            }
+            .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+            .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+            .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
+            .navbar {
+                position: absolute; top: calc(100% + 1rem); left: 0; right: 0; z-index: 1001;
+                display: block; padding: 0 1rem; max-height: 0; overflow: hidden;
+                opacity: 0; visibility: hidden; pointer-events: none;
+                background: rgba(11, 15, 25, 0.98); backdrop-filter: blur(14px);
+                border: 1px solid transparent; border-radius: 14px;
+                box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38);
+                transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease, border-color 0.2s ease;
+            }
+            .navbar.is-open {
+                max-height: 420px; padding: 0.65rem 1rem; opacity: 1; visibility: visible;
+                pointer-events: auto; border-color: var(--glass-border);
+            }
+            .nav-links { display: flex; flex-direction: column; gap: 0; }
+            .nav-links li { border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+            .nav-links li:last-child { border-bottom: 0; }
+            .nav-links a { display: block; padding: 0.9rem 0.25rem; font-size: 1rem; }
+            .nav-links a.active::after { bottom: 0.45rem; width: 32px; }
+            .mobile-quote { display: block; }
+            .mobile-quote a { color: var(--primary-cyan); font-weight: 700; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .menu-toggle span, .navbar { transition: none; }
+        }
+    </style>
+</head>
+<body>
+
+        <!-- Header & Navegación -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt logo-icon"></i>
+                <div class="logo-text">
+                    <span>SERVITRONIC</span>
+                    <small>INGENIERIA S.A.S.</small>
+                </div>
+            </a>            <nav class="navbar" id="site-navigation" aria-label="Navegación principal">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li class="mobile-quote"><a href="contacto.html#contactForm"><i class="fa-solid fa-calculator" aria-hidden="true"></i> Cotizar proyecto</a></li>
+                </ul>
+            </nav>
+
+<button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="site-navigation">
+                <span></span><span></span><span></span>
+            </button>
+
+            <a href="contacto.html" class="btn btn-primary" style="width: auto;">
+                <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección Hero principal -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="badge-tech"><i class="fa-solid fa-shield-halved"></i> Ecosistema de Seguridad Inteligente</span>
+                    <h1>Innovación y seguridad <br><span class="highlight">a tu alcance</span></h1>
+                    <p>Especialistas en ingeniería consultiva, citofonía virtual, analítica de video con IA y control de acceso para la propiedad horizontal en Bogotá.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="servicios.html" class="btn btn-primary btn-lg">Explorar Soluciones</a>
+                        <a href="#simulador" class="btn btn-outline btn-lg"><i class="fa-solid fa-sliders"></i> Simular Plan</a>
+                    </div>
+
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Resolución SuperVigilancia</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Certificación RETIE</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-check-circle"></i>
+                            <span>Soporte 24/7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Interactiva / Stats -->
+                <div class="hero-card glassmorphism">
+                    <div class="card-header">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <h3>Impacto en Copropiedades</h3>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">65%</span>
+                        <p>De conjuntos en Bogotá requieren actualización en CCTV y Citofonía.</p>
+                    </div>
+                    <hr class="divider">
+                    <div class="stat-box">
+                        <span class="stat-number">100%</span>
+                        <p>Conectividad en la nube integrada con Citoplus & Goph.</p>
+                    </div>
+                    <div class="card-footer-badge">
+                        <i class="fa-solid fa-location-dot"></i> Foco prioritario: Localidad de Suba
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Marcas y Aliados Tecnológicos -->
+        <section class="partners">
+            <div class="container">
+                <p class="partners-title">INTEGRADOS CON PLATAFORMAS Y FABRICANTES LÍDERES MUNDIALES</p>
+                <div class="partners-grid">
+                    <div class="partner-item"><i class="fa-solid fa-video"></i> HIKVISION</div>
+                    <div class="partner-item"><i class="fa-solid fa-phone-volume"></i> CITOPLUS</div>
+                    <div class="partner-item"><i class="fa-solid fa-users-gear"></i> GOPH</div>
+                    <div class="partner-item"><i class="fa-solid fa-fingerprint"></i> ZKTECO</div>
+                    <div class="partner-item"><i class="fa-solid fa-camera"></i> DAHUA</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Destacados -->
+        <section class="services-overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nuestras Soluciones de Ingeniería</h2>
+                    <p>Diseñamos e instalamos infraestructura tecnológica personalizada para mitigar riesgos patrimoniales.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Servicio 1 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-video"></i></div>
+                        <h3>CCTV y Analítica de Video</h3>
+                        <p>Cámaras IP 4K, térmicas y detección de intrusos con Inteligencia Artificial y almacenamiento híbrido.</p>
+                        <a href="servicios.html" class="service-link">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                        <h3>Citofonía Virtual (Citoplus)</h3>
+                        <p>Comunicación directa desde portería a los teléfonos móviles de residentes sin necesidad de cables físicos.</p>
+                        <a href="servicios.html" class="service-link">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-door-closed"></i></div>
+                        <h3>Control de Acceso Biométrico</h3>
+                        <p>Reconocimiento facial, RFID y lectura de placas vehiculares (LPR) para un registro estricto.</p>
+                        <a href="servicios.html" class="service-link">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Servicio 4 -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>Gestión y Asambleas (Goph)</h3>
+                        <p>Integración de plataformas digitales para asambleas virtuales seguras y control de parqueaderos.</p>
+                        <a href="servicios.html" class="service-link">Saber más <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Componente Interactivo: Simulador Rápido B2B -->
+        <section id="simulador" class="simulator-section">
+            <div class="container">
+                <div class="simulator-card glassmorphism">
+                    <div class="simulator-text">
+                        <h2><i class="fa-solid fa-calculator"></i> Calculadora de Plan para Copropiedades</h2>
+                        <p>Selecciona el rango de viviendas de tu conjunto para conocer las opciones recomendadas de Citofonía Virtual y Seguridad Integrada.</p>
+                    </div>
+                    <div class="simulator-controls">
+                        <label for="units-select">Número de Unidades Residenciales:</label>
+                        <select id="units-select" onchange="calcularPlan()">
+                            <option value="1">1 a 50 Viviendas</option>
+                            <option value="2">51 a 100 Viviendas</option>
+                            <option value="3">101 a 200 Viviendas</option>
+                            <option value="4">201 a 500 Viviendas</option>
+                        </select>
+
+                        <div class="simulator-result" id="simulator-result">
+                            <span class="plan-name">Plan Pyme / Copropiedad Pequeña (1 - 50 Viviendas)</span>
+                            <p id="plan-detail">Ideal para conjuntos pequeños. Incluye Citofonía Virtual Citoplus, control de acceso peatonal básico y soporte técnico preventivo.</p>
+                            <a href="contacto.html" class="btn btn-primary btn-block">Solicitar Diagnóstico Técnico Gratuito</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Corporativo -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-bolt logo-icon"></i>
+                    <div class="logo-text">
+                        <span>SERVITRONIC</span>
+                        <small>INGENIERÍA S.A.S.</small>
+                    </div>
+                </div>
+                <p>Ingeniería Eléctrica y Electrónica aplicada a la seguridad de la propiedad horizontal en Bogotá.</p>
+                <small>Licencia SuperVigilancia Res. No. 20204000064817</small>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto Directo</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Barrio Diana Turbay, Bogotá D.C.</p>
+                <p><i class="fa-solid fa-envelope"></i> servitronic_ing_sas@hotmail.com</p>
+                                <p><i class="fa-solid fa-mobile-screen"></i> <a href="tel:+573182205012" style="color: inherit; text-decoration: none;">+57 318 220 5012 (Celular)</a></p>
+                <p><i class="fa-brands fa-whatsapp" style="color: #25d366;"></i> <a href="https://wa.me/573182205012" target="_blank" style="color: inherit; text-decoration: none;">+57 318 220 5012 (WhatsApp)</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Servitronic Ingeniería Eléctrica y Electrónica S.A.S. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script Interactivo del Simulador -->
+    <script>
+        function calcularPlan() {
+            const select = document.getElementById('units-select');
+            const resultBox = document.getElementById('plan-detail');
+            const planName = document.querySelector('.plan-name');
+
+            const opciones = {
+                "1": {
+                    nombre: "Plan Pyme / Copropiedad Pequeña (1 - 50 Viviendas)",
+                    detalle: "Ideal para conjuntos pequeños. Incluye Citofonía Virtual Citoplus, control de acceso peatonal básico y soporte técnico preventivo."
+                },
+                "2": {
+                    nombre: "Plan Estándar (51 - 100 Viviendas)",
+                    detalle: "Inclusión de analítica de video para zonas comunes, citofonía IP para teléfonos móviles y módulo de asambleas virtuales Goph."
+                },
+                "3": {
+                    nombre: "Plan Avanzado (101 - 200 Viviendas)",
+                    detalle: "Sistema de CCTV 4K híbrido, talanqueras vehiculares automatizadas con LPR y soporte 24/7 con atención de emergencias."
+                },
+                "4": {
+                    nombre: "Plan Enterprise (201 - 500 Viviendas)",
+                    detalle: "Ecosistema completo de seguridad perimetral térmica, lectura de placas, citofonía ilimitada y gestión de parqueaderos."
+                }
+            };
+
+            const val = select.value;
+            if (opciones[val]) {
+                planName.textContent = opciones[val].nombre;
+                resultBox.textContent = opciones[val].detalle;
+            }
+        }
+    </script>
+    <!-- Botón Flotante de WhatsApp -->
+    <a href="https://wa.me/573182205012?text=Hola%20Servitronic%20S.A.S.,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20para%20mi%20copropiedad." 
+       class="floating-whatsapp" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       title="Chatea con nosotros por WhatsApp (+57 318 220 5012)" 
+       aria-label="Contacto por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script>
+        (() => {
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('#site-navigation');
+            if (!toggle || !menu) return;
+            const closeMenu = () => {
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Abrir menú de navegación');
+                menu.classList.remove('is-open');
+            };
+            toggle.addEventListener('click', () => {
+                const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', String(!isOpen));
+                toggle.setAttribute('aria-label', isOpen ? 'Abrir menú de navegación' : 'Cerrar menú de navegación');
+                menu.classList.toggle('is-open', !isOpen);
+            });
+            menu.addEventListener('click', event => {
+                if (event.target.closest('a')) closeMenu();
+            });
+            document.addEventListener('click', event => {
+                if (!menu.contains(event.target) && !toggle.contains(event.target)) closeMenu();
+            });
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape') { closeMenu(); toggle.focus(); }
+            });
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) closeMenu();
+            });
+        })();
+    </script>
+</body>
+</html>

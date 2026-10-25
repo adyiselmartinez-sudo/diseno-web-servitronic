@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Servitronic S.A.S. - Asesoría y Soporte B2B</title>
+    <!-- Iconos FontAwesome 6.4.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #111827;
+            --bg-card-hover: #172236;
+            --primary-cyan: #00f0ff;
+            --primary-blue: #0072ff;
+            --whatsapp-green: #25d366;
+            --text-white: #ffffff;
+            --text-muted: #9ca3af;
+            --glass-bg: rgba(17, 24, 39, 0.85);
+            --glass-border: rgba(0, 240, 255, 0.16);
+            --font-main: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1220px;
+            margin: 0 auto;
+        }
+
+        /* Header & Nav */
+        .header {
+            background-color: rgba(11, 15, 25, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-white);
+        }
+
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--primary-cyan);
+            filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.6));
+        }
+
+        .logo-text span {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            display: block;
+        }
+
+        .logo-text small {
+            font-size: 0.65rem;
+            color: var(--primary-cyan);
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-cyan);
+        }
+
+        .btn {
+            padding: 0.72rem 1.45rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+            font-size: 0.92rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+            color: #000;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.25);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+            transform: translateY(-2px);
+            color: #000;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-cyan);
+            border: 1px solid var(--glass-border);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-cyan);
+            background: rgba(0, 240, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .btn-subtle {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-white);
+            padding: 0.45rem 0.95rem;
+            font-size: 0.85rem;
+            border-radius: 6px;
+        }
+
+        .btn-subtle:hover {
+            border-color: var(--primary-cyan);
+            color: var(--primary-cyan);
+            background: rgba(0, 240, 255, 0.06);
+            transform: translateY(-2px);
+        }
+
+        /* Banner */
+        .page-banner {
+            padding: 65px 0 35px;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(0, 114, 255, 0.15), transparent 70%);
+        }
+
+        .badge-tech {
+            background: rgba(0, 240, 255, 0.08);
+            color: var(--primary-cyan);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid var(--glass-border);
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .page-banner h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--primary-cyan);
+            text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+        }
+
+        .page-banner p {
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 1.08rem;
+        }
+
+        /* Canales Rápidos (Elegantes y Uniformes) */
+        .quick-channels-section {
+            padding: 10px 0 35px;
+        }
+
+        .quick-channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .quick-channel-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 20px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            transition: 0.3s;
+        }
+
+        .quick-channel-card:hover {
+            border-color: var(--primary-cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 240, 255, 0.08);
+        }
+
+        .channel-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .channel-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            background: rgba(0, 240, 255, 0.08);
+            color: var(--primary-cyan);
+            border: 1px solid var(--glass-border);
+        }
+
+        .channel-text h4 {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 2px;
+            font-weight: 500;
+        }
+
+        .channel-text strong {
+            font-size: 0.98rem;
+            color: var(--text-white);
+            display: block;
+        }
+
+        /* Layout Principal de Contacto */
+        .contact-section {
+            padding: 25px 0 70px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.35fr;
+            gap: 35px;
+        }
+
+        @media (max-width: 950px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .glassmorphism {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            border-radius: 14px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .info-header {
+            margin-bottom: 25px;
+        }
+
+        .info-header h2 {
+            font-size: 1.75rem;
+            color: var(--primary-cyan);
+            margin-bottom: 8px;
+        }
+
+        .info-header p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+        }
+
+        .contact-info-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            background: var(--bg-card);
+            padding: 16px 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .info-item:hover {
+            border-color: var(--glass-border);
+            background: var(--bg-card-hover);
+        }
+
+        .info-item i {
+            font-size: 1.3rem;
+            color: var(--primary-cyan);
+            margin-top: 3px;
+        }
+
+        .info-item h4 {
+            font-size: 0.95rem;
+            color: var(--text-white);
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .info-item p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .info-item a {
+            color: var(--primary-cyan);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+
+        .coverage-badge {
+            background: rgba(0, 240, 255, 0.03);
+            border: 1px dashed var(--glass-border);
+            padding: 18px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .coverage-badge span {
+            color: var(--primary-cyan);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.92rem;
+        }
+
+        .coverage-badge p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        /* Formulario B2B Elegante */
+        .form-header {
+            margin-bottom: 25px;
+        }
+
+        .form-header h2 {
+            font-size: 1.75rem;
+            color: var(--text-white);
+            margin-bottom: 8px;
+        }
+
+        .form-header p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.88rem;
+            color: var(--text-white);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .form-group label span {
+            color: var(--primary-cyan);
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            color: var(--text-white);
+            font-family: var(--font-main);
+            font-size: 0.92rem;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-cyan);
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+            background: #141d2e;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        @media (max-width: 650px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Alerta de Envío Elegante */
+        .alert-success {
+            display: none;
+            background: rgba(0, 240, 255, 0.08);
+            border: 1px solid var(--primary-cyan);
+            color: #e0f2fe;
+            padding: 18px 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            box-shadow: 0 4px 15px rgba(0, 240, 255, 0.1);
+        }
+
+        .alert-success-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .alert-success-content i {
+            font-size: 1.4rem;
+            color: var(--primary-cyan);
+            margin-top: 2px;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 40px 0 70px;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-header h2 {
+            font-size: 2.1rem;
+            margin-bottom: 10px;
+        }
+
+        .faq-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 850px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .faq-card {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 24px;
+            transition: 0.3s;
+        }
+
+        .faq-card:hover {
+            border-color: var(--primary-cyan);
+            transform: translateY(-2px);
+        }
+
+        .faq-card h4 {
+            font-size: 1.05rem;
+            color: var(--primary-cyan);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Map Box Section */
+        .map-section {
+            padding: 0 0 70px;
+        }
+
+        .map-box {
+            background: linear-gradient(135deg, rgba(0, 114, 255, 0.12), rgba(0, 240, 255, 0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .map-box i {
+            font-size: 3rem;
+            color: var(--primary-cyan);
+            margin-bottom: 15px;
+        }
+
+        .map-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .map-box p {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 25px;
+            font-size: 0.95rem;
+        }
+
+        .map-actions {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-card);
+            padding: 60px 0 20px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer-brand small {
+            color: var(--primary-cyan);
+            display: block;
+            margin-top: 10px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            line-height: 2;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .footer-contact p {
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .footer-contact i {
+            color: var(--primary-cyan);
+            margin-right: 8px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        /* Botón Flotante de WhatsApp (Canal único y permanente de WhatsApp) */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #128c7e, var(--whatsapp-green));
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+            z-index: 9999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+            color: #ffffff;
+        }
+
+        .floating-whatsapp::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: var(--whatsapp-green);
+            opacity: 0.7;
+            z-index: -1;
+            animation: whatsapp-pulse 2s infinite;
+        }
+
+        @keyframes whatsapp-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1.55);
+                opacity: 0;
+            }
+        }
+
+        /* Responsividad */
+        
+
+            .page-banner h1 {
+                font-size: 2.1rem;
+            }
+
+            .glassmorphism {
+                padding: 25px 20px;
+            }
+        }
+    
+        /* Menú desplegable para tablet y móvil */
+        .menu-toggle { display: none; }
+        .mobile-quote { display: none; }
+        @media (max-width: 900px) {
+            .nav-container { position: relative; }
+            .nav-container > .btn { display: none; }
+            .menu-toggle {
+                display: flex; flex-direction: column; justify-content: center; gap: 5px;
+                width: 46px; height: 46px; padding: 10px; border-radius: 10px;
+                border: 1px solid var(--glass-border); background: rgba(0, 240, 255, 0.08);
+                color: var(--primary-cyan); cursor: pointer; transition: 0.25s ease;
+            }
+            .menu-toggle:hover, .menu-toggle:focus-visible {
+                border-color: var(--primary-cyan); box-shadow: 0 0 14px rgba(0, 240, 255, 0.2);
+                outline: none;
+            }
+            .menu-toggle span {
+                display: block; width: 24px; height: 2px; border-radius: 2px;
+                background: currentColor; transition: transform 0.25s ease, opacity 0.2s ease;
+            }
+            .menu-toggle[aria-expanded="true"] span:first-child { transform: translateY(7px) rotate(45deg); }
+            .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+            .menu-toggle[aria-expanded="true"] span:last-child { transform: translateY(-7px) rotate(-45deg); }
+            .navbar {
+                position: absolute; top: calc(100% + 1rem); left: 0; right: 0; z-index: 1001;
+                display: block; padding: 0 1rem; max-height: 0; overflow: hidden;
+                opacity: 0; visibility: hidden; pointer-events: none;
+                background: rgba(11, 15, 25, 0.98); backdrop-filter: blur(14px);
+                border: 1px solid transparent; border-radius: 14px;
+                box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38);
+                transition: max-height 0.3s ease, opacity 0.2s ease, padding 0.3s ease, border-color 0.2s ease;
+            }
+            .navbar.is-open {
+                max-height: 420px; padding: 0.65rem 1rem; opacity: 1; visibility: visible;
+                pointer-events: auto; border-color: var(--glass-border);
+            }
+            .nav-links { display: flex; flex-direction: column; gap: 0; }
+            .nav-links li { border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+            .nav-links li:last-child { border-bottom: 0; }
+            .nav-links a { display: block; padding: 0.9rem 0.25rem; font-size: 1rem; }
+            .nav-links a.active::after { bottom: 0.45rem; width: 32px; }
+            .mobile-quote { display: block; }
+            .mobile-quote a { color: var(--primary-cyan); font-weight: 700; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .menu-toggle span, .navbar { transition: none; }
+        }
+    </style>
+</head>
+<body>
+
+        <!-- Header & Navegación -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bolt logo-icon"></i>
+                <div class="logo-text">
+                    <span>SERVITRONIC</span>
+                    <small>INGENIERIA S.A.S.</small>
+                </div>
+            </a>            <nav class="navbar" id="site-navigation" aria-label="Navegación principal">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html" class="active" aria-current="page">Contacto</a></li>
+                    <li class="mobile-quote"><a href="contacto.html#contactForm"><i class="fa-solid fa-calculator" aria-hidden="true"></i> Cotizar proyecto</a></li>
+                </ul>
+            </nav>
+
+<button class="menu-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="site-navigation">
+                <span></span><span></span><span></span>
+            </button>
+
+            <a href="#contactForm" class="btn btn-primary" style="width: auto;">
+                <i class="fa-solid fa-calculator"></i> Cotizar Proyecto
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Banner de la Página -->
+        <section class="page-banner">
+            <div class="container">
+                <span class="badge-tech"><i class="fa-solid fa-headset"></i> Atención B2B & Asesoría de Ingeniería</span>
+                <h1>Canales de Atención <br><span class="highlight">e Ingeniería B2B</span></h1>
+                <p>Comunícate con nuestro equipo técnico para coordinar visitas periciales, diagnóstico de sistemas o cotizaciones para tu copropiedad en Bogotá.</p>
+            </div>
+        </section>
+
+        <!-- Barra de Canales Rápidos (Elegante y No Invasiva) -->
+        <section class="quick-channels-section">
+            <div class="container">
+                <div class="quick-channels-grid">
+                    <!-- Tarjeta 1: Celular -->
+                    <div class="quick-channel-card">
+                        <div class="channel-info">
+                            <div class="channel-icon">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <div class="channel-text">
+                                <h4>Línea Celular Móvil</h4>
+                                <strong>+57 318 220 5012</strong>
+                            </div>
+                        </div>
+                        <a href="tel:+573182205012" class="btn btn-subtle">
+                            <i class="fa-solid fa-phone"></i> Llamar
+                        </a>
+                    </div>
+
+                    <!-- Tarjeta 2: WhatsApp -->
+                    <div class="quick-channel-card">
+                        <div class="channel-info">
+                            <div class="channel-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="channel-text">
+                                <h4>Canal de WhatsApp</h4>
+                                <strong>+57 318 220 5012</strong>
+                            </div>
+                        </div>
+                        <a href="https://wa.me/573182205012?text=Hola%20Servitronic,%20deseo%20asesor%C3%ADa%20técnica%20para%20mi%20copropiedad." target="_blank" class="btn btn-subtle">
+                            <i class="fa-solid fa-comment-dots"></i> Escribir
+                        </a>
+                    </div>
+
+                    <!-- Tarjeta 3: Correo -->
+                    <div class="quick-channel-card">
+                        <div class="channel-info">
+                            <div class="channel-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="channel-text">
+                                <h4>Correo Corporativo</h4>
+                                <strong style="font-size: 0.86rem;">servitronic_ing_sas@hotmail.com</strong>
+                            </div>
+                        </div>
+                        <a href="mailto:servitronic_ing_sas@hotmail.com" class="btn btn-subtle">
+                            <i class="fa-solid fa-paper-plane"></i> Redactar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto (Información Directa + Formulario) -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    
+                    <!-- Columna de Información Directa -->
+                    <div class="glassmorphism">
+                        <div class="info-header">
+                            <h2>Atención Personalizada</h2>
+                            <p>Canales oficiales para administradores, consejos de administración y comités de seguridad en Bogotá.</p>
+                        </div>
+
+                        <div class="contact-info-list">
+                            <!-- Celular y WhatsApp -->
+                            <div class="info-item">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                <div>
+                                    <h4>Línea Móvil & WhatsApp</h4>
+                                    <p>Atención a consultas, propuestas y urgencias técnicas.</p>
+                                    <p style="margin-top: 4px;">
+                                        <a href="tel:+573182205012">+57 318 220 5012</a>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Horario de Operación -->
+                            <div class="info-item">
+                                <i class="fa-solid fa-clock"></i>
+                                <div>
+                                    <h4>Horario de Operación</h4>
+                                    <p>Lunes a Sábado: 7:00 AM - 6:00 PM</p>
+                                    <p style="color: var(--primary-cyan); font-size: 0.82rem; font-weight: 600;">Cuadrilla técnica de guardia 24/7 para emergencias</p>
+                                </div>
+                            </div>
+
+                            <!-- Sede Central -->
+                            <div class="info-item">
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <h4>Sede Operativa</h4>
+                                    <p>Barrio Diana Turbay, Localidad Rafael Uribe, Bogotá D.C., Colombia.</p>
+                                </div>
+                            </div>
+
+                            <!-- Respaldo Institucional -->
+                            <div class="info-item">
+                                <i class="fa-solid fa-shield-halved"></i>
+                                <div>
+                                    <h4>Habilitación Legal & Seguridad</h4>
+                                    <p>Resolución No. 20204000064817 de la Superintendencia de Vigilancia y Seguridad Privada. Aval técnico RETIE.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="coverage-badge">
+                            <span><i class="fa-solid fa-map-location-dot"></i> Cobertura Prioritaria en Bogotá</span>
+                            <p>Atención prioritaria en la localidad de <strong>Suba</strong> (Estratos 4, 5 y 6), Usaquén, Chapinero, Fontibón y municipios aledaños de la Sabana.</p>
+                        </div>
+                    </div>
+
+                    <!-- Columna del Formulario B2B Elegante -->
+                    <div class="glassmorphism">
+                        <div class="form-header">
+                            <h2>Solicitar Diagnóstico Técnico</h2>
+                            <p>Diligencia la información de tu copropiedad y un ingeniero especializado te contactará en menos de 24 horas.</p>
+                        </div>
+
+                        <form id="contactForm" onsubmit="enviarFormulario(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nombre">Nombre de Contacto <span>*</span></label>
+                                    <input type="text" id="nombre" placeholder="Ej. Yisel Martínez" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono">Celular / Teléfono <span>*</span></label>
+                                    <input type="tel" id="telefono" placeholder="Ej. 3182205012" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Correo Electrónico <span>*</span></label>
+                                    <input type="email" id="email" placeholder="admin@conjunto.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rol">Cargo en la Copropiedad <span>*</span></label>
+                                    <select id="rol" required>
+                                        <option value="">Selecciona tu rol...</option>
+                                        <option value="Administrador(a)">Administrador(a) de P.H.</option>
+                                        <option value="Miembro del Consejo">Miembro del Consejo de Administración</option>
+                                        <option value="Comité de Seguridad">Comité de Seguridad / Convivencia</option>
+                                        <option value="Propietario / Residente">Propietario / Residente</option>
+                                        <option value="Empresa / Delegado">Empresa / Delegado</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="viviendas">N° de Unidades / Viviendas <span>*</span></label>
+                                    <select id="viviendas" required>
+                                        <option value="">Selecciona tamaño...</option>
+                                        <option value="1 a 50 Viviendas (Plan Pyme)">1 a 50 Viviendas (Plan Pyme)</option>
+                                        <option value="51 a 100 Viviendas (Plan Estándar)">51 a 100 Viviendas (Plan Estándar)</option>
+                                        <option value="101 a 200 Viviendas (Plan Avanzado)">101 a 200 Viviendas (Plan Avanzado)</option>
+                                        <option value="201 a 500 Viviendas (Plan Enterprise)">201 a 500 Viviendas (Plan Enterprise)</option>
+                                        <option value="Más de 500 Viviendas (Macro-proyecto)">Más de 500 Viviendas (Macro-proyecto)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="servicio">Servicio de Interés <span>*</span></label>
+                                    <select id="servicio" required>
+                                        <option value="">Selecciona solución...</option>
+                                        <option value="CCTV y Analítica IA">CCTV y Analítica con IA</option>
+                                        <option value="Citofonía Virtual Citoplus">Citofonía Virtual Citoplus</option>
+                                        <option value="Control de Acceso Biométrico y Vehicular">Control Biométrico y Vehicular (LPR)</option>
+                                        <option value="Plataforma de Asambleas GOPH">Plataforma de Asambleas GOPH</option>
+                                        <option value="Mantenimiento Preventivo y RETIE">Mantenimiento Preventivo y RETIE</option>
+                                        <option value="Ecosistema Integral Completo">Ecosistema Integral Completo</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="conjunto">Nombre de la Copropiedad y Localidad <span>*</span></label>
+                                <input type="text" id="conjunto" placeholder="Ej. Conjunto Residencial Los Sauces - Localidad Suba" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensaje">Detalles Adicionales o Necesidades Específicas</label>
+                                <textarea id="mensaje" rows="3" placeholder="Describe brevemente el estado de tus equipos, fallas recurrentes o fecha tentativa para la visita técnica..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                                <i class="fa-solid fa-paper-plane"></i> Enviar Solicitud de Diagnóstico
+                            </button>
+
+                            <!-- Alerta de Confirmación Sutil -->
+                            <div id="alertSuccess" class="alert-success">
+                                <div class="alert-success-content">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                    <div>
+                                        <strong style="color: var(--primary-cyan); font-size: 0.98rem; display: block; margin-bottom: 4px;">
+                                            ¡Solicitud preparada con éxito!
+                                        </strong>
+                                        <p style="margin: 0; color: #cbd5e1;">Hemos recibido tu información. Un ingeniero de Servitronic se comunicará en menos de 24 horas.</p>
+                                        <div style="margin-top: 10px; font-size: 0.84rem; color: var(--text-muted); border-top: 1px solid rgba(255,255,255,0.08); padding-top: 8px;">
+                                            ¿Deseas atención inmediata? También puedes 
+                                            <a id="waDirectLink" href="#" target="_blank" style="color: var(--primary-cyan); font-weight: 600; text-decoration: underline;">
+                                                enviar los datos cargados directamente a WhatsApp
+                                            </a>.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Preguntas Frecuentes (FAQ) -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-header">
+                    <span class="badge-tech"><i class="fa-solid fa-circle-question"></i> Respuestas Rápidas</span>
+                    <h2>Preguntas Frecuentes de Administradores</h2>
+                    <p>Conoce cómo opera nuestro modelo de atención y diagnóstico técnico en Bogotá.</p>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-card">
+                        <h4><i class="fa-solid fa-clipboard-check"></i> ¿La visita de diagnóstico tiene costo?</h4>
+                        <p>No. Para administraciones de propiedad horizontal y consejos, realizamos una visita de inspección técnica inicial 100% sin costo para evaluar cableado, puntos ciegos de cámaras, citofonía y controles de acceso.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h4><i class="fa-solid fa-bolt"></i> ¿Cómo atienden emergencias fuera de horario?</h4>
+                        <p>A través de nuestra línea celular móvil (+57 318 220 5012), disponemos de técnicos de guardia 24/7 para fallas críticas que comprometan la seguridad de la copropiedad (caída de CCTV, talanqueras o citofonía).</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h4><i class="fa-solid fa-award"></i> ¿Cuentan con licencias y seguros al día?</h4>
+                        <p>Sí. Operamos con licencia formal de la Superintendencia de Vigilancia y Seguridad Privada (Resolución No. 20204000064817), dictamen RETIE y pólizas de responsabilidad civil extracontractual.</p>
+                    </div>
+
+                    <div class="faq-card">
+                        <h4><i class="fa-solid fa-handshake"></i> ¿Ofrecen equipos en calidad de préstamo?</h4>
+                        <p>Sí. En caso de daño de un DVR, NVR, cámara principal o fuente crítica, nuestros planes de mantenimiento incluyen equipos de respaldo en comodato temporal para no dejar descubierta la copropiedad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bloque de Localización de Operaciones -->
+        <section class="map-section">
+            <div class="container">
+                <div class="map-box">
+                    <i class="fa-solid fa-city"></i>
+                    <h3>Centro de Operaciones y Cobertura Técnica en Bogotá</h3>
+                    <p>Nuestras unidades técnicas se desplazan a las 20 localidades de Bogotá con prioridad en Suba y Sabana Norte, equipadas con instrumental de medición, repuestos inmediatos y herramientas de fibra óptica.</p>
+                    <div class="map-actions">
+                        <a href="servicios.html" class="btn btn-primary" style="width: auto;">
+                            <i class="fa-solid fa-gears"></i> Ver Portafolio de Soluciones
+                        </a>
+                        <a href="tel:+573182205012" class="btn btn-outline" style="width: auto;">
+                            <i class="fa-solid fa-phone"></i> Llamar a Línea de Guardia
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Corporativo -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fa-solid fa-bolt logo-icon"></i>
+                    <span>SERVITRONIC S.A.S.</span>
+                </div>
+                <p>Ingeniería Eléctrica y Electrónica aplicada a la seguridad de la propiedad horizontal en Bogotá.</p>
+                <small>Licencia SuperVigilancia Res. No. 20204000064817</small>
+            </div>
+
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Contacto Directo</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Barrio Diana Turbay, Bogotá D.C.</p>
+                <p><i class="fa-solid fa-envelope"></i> servitronic_ing_sas@hotmail.com</p>
+                <p><i class="fa-solid fa-mobile-screen"></i> <a href="tel:+573182205012" style="color: inherit; text-decoration: none;">+57 318 220 5012 (Celular)</a></p>
+                <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/573182205012" target="_blank" style="color: inherit; text-decoration: none;">+57 318 220 5012 (WhatsApp)</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Servitronic Ingeniería Eléctrica y Electrónica S.A.S. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Botón Flotante de WhatsApp (Canal único y permanente de WhatsApp) -->
+    <a href="https://wa.me/573182205012?text=Hola%20Servitronic%20S.A.S.,%20deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20para%20mi%20copropiedad." 
+       class="floating-whatsapp" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       title="Chatea con nosotros por WhatsApp (+57 318 220 5012)" 
+       aria-label="Contacto por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Script de Gestión del Formulario -->
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault();
+
+            // Capturar campos del formulario
+            const nombre = document.getElementById('nombre').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const rol = document.getElementById('rol').value;
+            const viviendas = document.getElementById('viviendas').value;
+            const servicio = document.getElementById('servicio').value;
+            const conjunto = document.getElementById('conjunto').value.trim();
+            const mensaje = document.getElementById('mensaje').value.trim();
+
+            // Construir texto preparado por si el usuario opta por abrir WhatsApp
+            let textoWhatsApp = `*SOLICITUD DE DIAGNÓSTICO / COTIZACIÓN*\n`;
+            textoWhatsApp += `*Servitronic S.A.S. - Ingeniería*\n\n`;
+            textoWhatsApp += `👤 *Contacto:* ${nombre}\n`;
+            textoWhatsApp += `📱 *Celular:* ${telefono}\n`;
+            textoWhatsApp += `✉️ *Correo:* ${email}\n`;
+            textoWhatsApp += `🏢 *Copropiedad:* ${conjunto}\n`;
+            textoWhatsApp += `💼 *Cargo:* ${rol}\n`;
+            textoWhatsApp += `🏠 *Tamaño:* ${viviendas}\n`;
+            textoWhatsApp += `⚙️ *Servicio:* ${servicio}\n`;
+            if (mensaje) {
+                textoWhatsApp += `📝 *Detalles:* ${mensaje}\n`;
+            }
+
+            const urlWhatsApp = `https://wa.me/573182205012?text=${encodeURIComponent(textoWhatsApp)}`;
+            
+            // Asignar el enlace opcional sutil
+            const waLink = document.getElementById('waDirectLink');
+            if (waLink) {
+                waLink.href = urlWhatsApp;
+            }
+
+            // Mostrar la confirmación elegante
+            const alertBox = document.getElementById('alertSuccess');
+            alertBox.style.display = 'block';
+
+            // Opcional: limpiar campos tras unos segundos
+            setTimeout(() => {
+                document.getElementById('contactForm').reset();
+            }, 1200);
+        }
+    </script>
+
+    <script>
+        (() => {
+            const toggle = document.querySelector('.menu-toggle');
+            const menu = document.querySelector('#site-navigation');
+            if (!toggle || !menu) return;
+            const closeMenu = () => {
+                toggle.setAttribute('aria-expanded', 'false');
+                toggle.setAttribute('aria-label', 'Abrir menú de navegación');
+                menu.classList.remove('is-open');
+            };
+            toggle.addEventListener('click', () => {
+                const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+                toggle.setAttribute('aria-expanded', String(!isOpen));
+                toggle.setAttribute('aria-label', isOpen ? 'Abrir menú de navegación' : 'Cerrar menú de navegación');
+                menu.classList.toggle('is-open', !isOpen);
+            });
+            menu.addEventListener('click', event => {
+                if (event.target.closest('a')) closeMenu();
+            });
+            document.addEventListener('click', event => {
+                if (!menu.contains(event.target) && !toggle.contains(event.target)) closeMenu();
+            });
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape') { closeMenu(); toggle.focus(); }
+            });
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 900) closeMenu();
+            });
+        })();
+    </script>
+</body>
+</html>
